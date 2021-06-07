@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+</style>
+<body>
+
+
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="title">
+  <h1>Ottawa Grocers</h1>
+</div>
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Diet')">Diet</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+</div>
+
+<!-- Tab content -->
+<div id="Diet" class="tabcontent">
+  <h3>Diet Information</h3>
+  <p></p>
+  <p>Please Select your Diet Preference Below:</p>
+	Choose a Category:
+	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<option value="LactoseFree">Lactose Free</option>
+    <option value="NutFree">Nut Free</option>
+    <option value="Organic">Organic</option>
+    <option value="LowCalorie">Low Calorie</option>
+    <option value="None" selected>None</option>
+	</select>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Your targeted products</h3>
+  <p>We preselected products based on your restrictions.</p>
+	 Choose items to buy:
+   <br>
+   <br>
+	 <div id="displayProduct"></div>
+   <br>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <p>Here is your cart.</p>
+  <div id="displayCart"></div>
+</div>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+<p id="signature"> Site created by Ashair Imran</p>
+</body>
+</html>
